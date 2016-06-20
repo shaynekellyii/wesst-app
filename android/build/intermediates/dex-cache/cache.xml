@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Shayne\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.13.0\58a7d54b6a4f28be11f0cecec93097eddf473e6f\parse-android-1.13.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="58a7d54b6a4f28be11f0cecec93097eddf473e6f">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\parse-android-1.13.0_84d5e9950b30639664407688a23606898c0c9a6b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_f4059b89fd432615b33cc2d4a7aca852edd4dc89.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1_b760bdf66c524debe60131a42c6b2026aff5b9af.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.1_d49be4cdd8a051d9e3b982b4f2e4d69236a342e3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.1_981759b3b8752d629cb160538b4913c7c8c4833a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_6e47f858fe03bcec655666e6293e6ccc300a8598.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\exploded-aar\com.android.support\design\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.2.1_76c4c13a5329e6b59a627752555fe3a1a8e91f25.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\.gradle\caches\modules-2\files-2.1\com.parse\parseinterceptors\0.0.2\8c62746a7c33ffa044d9cd9c390a4c9d209b8925\parseinterceptors-0.0.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8c62746a7c33ffa044d9cd9c390a4c9d209b8925">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\parseinterceptors-0.0.2_871a5d759e140b13d4339dd4170f11eb0c07f68e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.1_88c80336e2ea2c135f651d1a680cb679b258cb57.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.2.1_390fd23b4f8c09d8a199d8045e27b3e3888678de.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.1_22053614c54e8ec0aebbea13da24655eb58c795c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Shayne\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\Shayne\AndroidStudioProjects\WEC2017\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_3e597daaa41b6190efa632cca62ee6c67f839e28.jar" />
+    </item>
+
+</items>
