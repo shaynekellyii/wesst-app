@@ -12,24 +12,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.toolbar_title);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -65,9 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up the toolbar tabs
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Stream"));
-        tabLayout.addTab(tabLayout.newTab().setText("Competition"));
+        tabLayout.addTab(tabLayout.newTab().setText("Activity"));
+        tabLayout.addTab(tabLayout.newTab().setText("Schools"));
         tabLayout.addTab(tabLayout.newTab().setText("Messages"));
+        tabLayout.addTab(tabLayout.newTab().setText("Profile"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -154,11 +144,14 @@ public class MainActivity extends AppCompatActivity {
                     StreamFragment streamFragment = new StreamFragment();
                     return streamFragment;
                 case 1:
-                    CompFragment compFragment = new CompFragment();
-                    return compFragment;
+                    SchoolFragment schoolFragment = new SchoolFragment();
+                    return schoolFragment;
                 case 2:
                     MsgFragment msgFragment = new MsgFragment();
                     return msgFragment;
+                case 3:
+                    ProfileFragment profileFragment = new ProfileFragment();
+                    return profileFragment;
                 default:
                     return new StreamFragment();
             }
@@ -166,8 +159,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 4 total pages.
+            return 4;
         }
     }
 }

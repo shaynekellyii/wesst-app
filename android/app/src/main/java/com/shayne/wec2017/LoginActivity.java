@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
@@ -24,6 +25,11 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etPassword = (EditText)findViewById(R.id.etPassword);
         Button btLogin = (Button)findViewById(R.id.btLogin);
         Button btSignup = (Button)findViewById(R.id.btSignup);
+
+        // TODO: remove test code
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
 
         // Login button listener
         btLogin.setOnClickListener(new View.OnClickListener() {

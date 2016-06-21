@@ -23,13 +23,6 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.parse.APPLICATION_ID"
-            android:value="{wec2017android}"/>
-        <meta-data
-            android:name="com.parse.CLIENT_KEY"
-            android:value="{wec2017masterkey!}"/>
-
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
@@ -45,6 +38,14 @@
             android:label="@string/title_activity_new_post"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.shayne.wec2017.MainActivity"/>
+        </activity>
+        <activity android:name=".EditProfileActivity"
+                  android:label="@string/title_activity_edit_profile"
+                  android:parentActivityName=".MainActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.shayne.wec2017.MainActivity"/>

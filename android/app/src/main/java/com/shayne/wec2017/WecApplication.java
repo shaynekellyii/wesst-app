@@ -17,18 +17,19 @@ public class WecApplication extends Application {
         super.onCreate();
 
         // Register your parse models here
-        ParseObject.registerSubclass(Message.class);
-        ParseObject.registerSubclass(Post.class);
+        // ParseObject.registerSubclass(Message.class);
+        // ParseObject.registerSubclass(Post.class);
         // Existing initialization happens after all classes are registered
 
-        // set applicationId and server based on the values in the Heroku settings.
+        // set applicationId and server
         // any network interceptors must be added with the Configuration Builder given this syntax
         Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("wec2017android") // should correspond to APP_ID env variable
-                .addNetworkInterceptor(new ParseLogInterceptor())
-                .server("https://wec2017android.herokuapp.com/parse/").build());
-        ParseUser.enableAutomaticUser();
-        ParseACL defaultAcl = new ParseACL();
+                .applicationId("hKmxGJE5hCHKaJzo6gLaHiTA0rHP4LLfaU3glM5w") // should correspond to APP_ID env variable
+                .clientKey("eaRPKYGEroESs0JFj1LrJImfjCVEKyJTZUb9orj3")
+                .addNetworkInterceptor(new ParseLogInterceptor()).build());
+                //.server("https://wec2017android.herokuapp.com/parse/").build());
+        //ParseUser.enableAutomaticUser();
+        //ParseACL defaultAcl = new ParseACL();
 
     }
 }
