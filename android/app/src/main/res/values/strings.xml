@@ -19,10 +19,32 @@
     <string name="post">Post</string>
     <string name="toolbar_title">WESST</string>
     <string name="not_specified">Unknown</string>
+
     <string name="fullname_label">Full name:</string>
     <string name="school_label">School:</string>
     <string name="title_label">Title:</string>
     <string name="email_label">Email:</string>
+    <string name="gender_label">Gender:</string>
+    <string name="info_label">Info:</string>
+    <string name="phone_label">Phone:</string>
+    <string name="date_label">Birthday:</string>
+
+    <string-array name="school_name_array">
+        <item>SFU Burnaby</item>
+        <item>SFU Surrey</item>
+        <item>UBC Vancouver</item>
+        <item>UBC Okanagan</item>
+        <item>UVic A</item>
+        <item>UVic B</item>
+        <item>BCIT</item>
+        <item>U of A</item>
+        <item>U of C</item>
+        <item>U of M</item>
+        <item>UNBC</item>
+        <item>U of R</item>
+        <item>U of S</item>
+    </string-array>
+
     <string name="edit_profile">Edit profile</string>
     <string name="save_profile">Save</string>
 

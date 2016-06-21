@@ -23,11 +23,15 @@
             android:id="@+id/etFullName"
             android:hint="@string/fullname_label">
         </EditText>
-        <EditText
+        <!--<EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/school_label"
-            android:id="@+id/etSchoolName"/>
+            android:id="@+id/etSchoolName"/>-->
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spSchoolName"></Spinner>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,6 +43,29 @@
             android:inputType="textEmailAddress"
             android:hint="@string/email_label"
             android:id="@+id/etEmail"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etGender"
+            android:hint="@string/gender_label">
+        </EditText>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/info_label"
+            android:id="@+id/etInfo"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/phone_label"
+            android:inputType="phone"
+            android:id="@+id/etPhone"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:hint="@string/date_label"
+            android:id="@+id/etDate"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
