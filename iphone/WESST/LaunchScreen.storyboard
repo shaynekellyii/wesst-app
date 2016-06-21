@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALPHA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qux-ry-QBg">
+                                <rect key="frame" x="220" y="463" width="160" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="hue-vK-XlS"/>
+                                    <constraint firstAttribute="height" constant="61" id="lgq-bB-BMu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.24313725489999999" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="esss_and_wesst copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="3ua-Uj-dzf">
+                                <rect key="frame" x="39" y="106" width="523" height="329"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3ua-Uj-dzf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LIt-Pp-lpA"/>
+                            <constraint firstItem="3ua-Uj-dzf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="86" id="Mi9-z8-Rwy"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Qux-ry-QBg" secondAttribute="bottom" constant="76" id="OGl-L8-Bxf"/>
+                            <constraint firstItem="3ua-Uj-dzf" firstAttribute="centerX" secondItem="Qux-ry-QBg" secondAttribute="centerX" id="bsg-Kc-r5Z"/>
+                            <constraint firstItem="Qux-ry-QBg" firstAttribute="top" secondItem="3ua-Uj-dzf" secondAttribute="bottom" constant="28" id="i9I-EL-KRp"/>
+                            <constraint firstItem="3ua-Uj-dzf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="19" id="pLU-aC-QP3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="397"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="esss_and_wesst copy.png" width="800" height="300"/>
+    </resources>
+</document>
