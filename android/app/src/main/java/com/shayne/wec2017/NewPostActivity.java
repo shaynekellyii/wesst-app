@@ -33,9 +33,15 @@ public class NewPostActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
                 String data = etPost.getText().toString();
-                ParseObject post = ParseObject.create("Post");
-                post.put(Post.USER_ID_KEY, ParseUser.getCurrentUser().getObjectId());
-                post.put(Post.BODY_KEY, data);
+                ParseUser user = ParseUser.getCurrentUser();
+                ParseObject post = ParseObject.create("Posts");
+
+                if (data != "") {
+                    post.put("info", data);
+                }
+                post.put("user", ParseObject.createWithoutData(ParseUser.class, user.getObjectId()));
+                post.put("hasImage", false);
+
                 post.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
@@ -45,6 +51,7 @@ public class NewPostActivity extends AppCompatActivity {
                 });
             }
         });
+        //finish();
     }
 
 }

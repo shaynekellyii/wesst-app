@@ -6,13 +6,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Example Post"
-        android:id="@+id/post_content_view"
-        android:layout_gravity="center_horizontal"/>
+        android:id="@+id/post_content"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Example User"
-        android:id="@+id/post_user_view"
-        android:layout_gravity="center_horizontal"/>
+        android:id="@+id/post_date"/>
 </LinearLayout>

@@ -1,6 +1,6 @@
 package com.shayne.wec2017;
 
-import android.app.Activity;
+import android.content.ClipData;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,48 +8,53 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Shayne on 2016-06-07.
+ * Created by Shayne on 2016-06-21.
  */
-public class PostListAdapter extends ArrayAdapter<Post> {
-    private Context context;
-    String mUserId;
 
-    public PostListAdapter(Context context, String userId, List<Post> posts) {
-        super(context, android.R.layout.simple_list_item_1, posts);
-        this.context = context;
-        this.mUserId = userId;
+public class PostListAdapter extends ArrayAdapter<Posts> {
+
+    DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+
+    public PostListAdapter(Context context, int textViewResourceId) {
+        super(context, textViewResourceId);
     }
 
+    public PostListAdapter(Context context, int resource, List<Posts> items) {
+        super(context, resource, items);
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder = null;
-        Post post = (Post)getItem(position);
-        View viewToUse = null;
 
-        // Block to support grid view or list view
-        LayoutInflater mInflater = (LayoutInflater)context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        if (convertView == null) {
-            viewToUse = mInflater.inflate(R.layout.post_list_item, null);
-            holder = new ViewHolder();
-            holder.tvPost = (TextView)viewToUse.findViewById(R.id.post_content_view);
-            holder.tvUser = (TextView)viewToUse.findViewById(R.id.post_user_view);
-        }
-        else {
-            viewToUse = convertView;
-            holder = (ViewHolder)viewToUse.getTag();
+        View v = convertView;
+
+        if (v == null) {
+            LayoutInflater layoutInflater;
+            layoutInflater = LayoutInflater.from(getContext());
+            v = layoutInflater.inflate(R.layout.post_list_item, null);
         }
 
-        holder.tvPost.setText(post.getBody());
-        holder.tvUser.setText(post.getUserId());
+        Posts post = getItem(position);
 
-        return viewToUse;
+        if (post != null) {
+            TextView tvPost = (TextView) v.findViewById(R.id.post_content);
+            TextView tvDate = (TextView) v.findViewById(R.id.post_date);
+
+            if (tvPost != null) {
+                tvPost.setText(post.get("info").toString());
+            }
+            if (tvDate != null) {
+                tvDate.setText(df.format(post.getCreatedAt()));
+            }
+        }
+
+        return v;
     }
 
-    // Holder for the list items
-    private class ViewHolder {
-        public TextView tvPost;
-        public TextView tvUser;
-    }
 }

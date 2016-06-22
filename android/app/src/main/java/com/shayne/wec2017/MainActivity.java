@@ -83,21 +83,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container);
-                String tag = fragment.getTag();
-                if (fragment != null) {
-                    if (fragment instanceof StreamFragment) {
-                        Snackbar.make(view, "Create a new post", Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                        Intent intent = new Intent(MainActivity.this, NewPostActivity.class);
-                        startActivity(intent);
-                    }
-                    else {
-                        Snackbar.make(view, "Replace with your own action:" + tag, Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                    }
-                }
-
+                Intent intent = new Intent(MainActivity.this, NewPostActivity.class);
+                startActivity(intent);
             }
         });
     }

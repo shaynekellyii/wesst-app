@@ -20,6 +20,7 @@ public class WecApplication extends Application {
         // ParseObject.registerSubclass(Message.class);
         // ParseObject.registerSubclass(Post.class);
         ParseObject.registerSubclass(Schools.class);
+        ParseObject.registerSubclass(Posts.class);
         // Existing initialization happens after all classes are registered
 
         // set applicationId and server
