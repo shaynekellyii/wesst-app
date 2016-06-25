@@ -14,6 +14,10 @@ import java.util.Date;
 
     @ParseClassName("Posts")
     public class Posts extends ParseObject {
+    public static String getInfo() {
+        return info;
+    }
+
         public static String info;
         public static Image image;
         public static ParseUser user;

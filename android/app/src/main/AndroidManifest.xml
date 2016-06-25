@@ -42,6 +42,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.shayne.wec2017.MainActivity"/>
         </activity>
+        <activity
+            android:name=".PostDetailActivity"
+            android:label="View post"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.shayne.wec2017.MainActivity"/>
+        </activity>
         <activity android:name=".EditProfileActivity"
                   android:label="@string/title_activity_edit_profile"
                   android:parentActivityName=".MainActivity"

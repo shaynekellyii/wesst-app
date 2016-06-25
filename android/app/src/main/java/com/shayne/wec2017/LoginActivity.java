@@ -2,6 +2,7 @@ package com.shayne.wec2017;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         // Login button listener
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
 
@@ -46,13 +47,10 @@ public class LoginActivity extends AppCompatActivity {
                             // TODO: go to proper activity (welcome screen?)
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
-                            Toast.makeText(getApplicationContext(), "Log in successful",
-                                    Toast.LENGTH_LONG).show();
                             finish();
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Incorrect username or password",
-                                    Toast.LENGTH_LONG).show();
+                            Snackbar.make(v, "Incorrect username or password", Snackbar.LENGTH_SHORT).show();
                         }
                     }
                 });

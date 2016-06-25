@@ -87,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        assert findViewById(R.id.main_content) != null;
+        Snackbar.make(findViewById(R.id.main_content), "Welcome back. WESST is BESST.",
+                Snackbar.LENGTH_SHORT).show();
     }
 
     @Override

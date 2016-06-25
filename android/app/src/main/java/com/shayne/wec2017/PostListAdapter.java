@@ -12,6 +12,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Shayne on 2016-06-21.
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class PostListAdapter extends ArrayAdapter<Posts> {
 
-    DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+    DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss", Locale.CANADA);
 
     public PostListAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);

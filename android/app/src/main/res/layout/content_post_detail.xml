@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-
-</LinearLayout>
+              android:layout_height="match_parent"
+              android:paddingTop="?attr/actionBarSize"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPostAuthorDate"
+            android:elevation="2dp"
+            android:layout_alignParentTop="true"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPostContent"
+            android:elevation="2dp"
+            android:layout_below="@id/tvPostAuthorDate"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@android:id/list"
+            android:layout_below="@id/tvPostContent"
+            android:background="#BBBBBB">
+        </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:id="@+id/etComment"
+            android:layout_weight="1"
+            android:hint="Post a comment"
+            android:elevation="2dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btComment"
+            android:elevation="2dp"
+            android:text="@string/comment"/>
+    </LinearLayout>
+</RelativeLayout>

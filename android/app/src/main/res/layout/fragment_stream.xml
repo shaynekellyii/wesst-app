@@ -1,13 +1,13 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.shayne.wec2017.StreamFragment">
-
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                              xmlns:tools="http://schemas.android.com/tools"
+                                              android:id="@+id/swipe_container"
+                                              android:layout_width="match_parent"
+                                              android:layout_height="match_parent"
+                                              tools:context="com.shayne.wec2017.StreamFragment">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/android:list"
-        android:transcriptMode="alwaysScroll">
+        >
     </ListView>
-</FrameLayout>
+</android.support.v4.widget.SwipeRefreshLayout>
