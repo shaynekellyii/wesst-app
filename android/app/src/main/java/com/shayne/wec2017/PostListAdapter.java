@@ -2,11 +2,21 @@ package com.shayne.wec2017;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.parse.GetDataCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.squareup.picasso.Picasso;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -46,12 +56,22 @@ public class PostListAdapter extends ArrayAdapter<Posts> {
         if (post != null) {
             TextView tvPost = (TextView) v.findViewById(R.id.post_content);
             TextView tvDate = (TextView) v.findViewById(R.id.post_date);
+            final ImageView ivImage = (ImageView) v.findViewById(R.id.post_img);
 
             if (tvPost != null) {
                 tvPost.setText(post.get("info").toString());
             }
             if (tvDate != null) {
                 tvDate.setText(df.format(post.getCreatedAt()));
+            }
+            if (ivImage != null) {
+                if ((Boolean)post.get("hasImage")) {
+                    Picasso.with(getContext()).load(post.getParseFile("image").getUrl()).into(ivImage);
+                }
+                else
+                {
+                    ivImage.setImageBitmap(null);
+                }
             }
         }
 

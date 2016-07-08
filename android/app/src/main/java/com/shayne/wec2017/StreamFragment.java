@@ -3,20 +3,26 @@ package com.shayne.wec2017;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
+import com.parse.GetDataCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
@@ -28,6 +34,7 @@ import java.util.List;
  */
 public class StreamFragment extends android.support.v4.app.ListFragment {
     List<Posts> posts;
+    List<Bitmap> bitmaps;
     PostListAdapter adapter;
     SwipeRefreshLayout mSwipeRefreshLayout;
 
@@ -103,10 +110,11 @@ public class StreamFragment extends android.support.v4.app.ListFragment {
 
     private void getPosts() {
         ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Posts");
+        query.orderByDescending("createdAt");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-                for (ParseObject postObject : objects) {
+                for (final ParseObject postObject : objects) {
                     posts.add((Posts)postObject);
                 }
                 if (posts.size() > 0 && adapter != null) {

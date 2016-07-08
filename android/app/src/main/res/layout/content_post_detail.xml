@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:paddingTop="?attr/actionBarSize"
                 android:descendantFocusability="beforeDescendants"
                 android:focusableInTouchMode="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="200dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:contentDescription="Post image"
+            android:id="@+id/ivPostDetail"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvPostAuthorDate"
-            android:elevation="2dp"
-            android:layout_alignParentTop="true"/>
+            android:id="@+id/tvPostAuthorDate"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvPostContent"
-            android:elevation="2dp"
-            android:layout_below="@id/tvPostAuthorDate"/>
+            android:id="@+id/tvPostContent"/>
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@android:id/list"
-            android:layout_below="@id/tvPostContent"
             android:background="#BBBBBB">
         </ListView>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal">
         <EditText
             android:layout_width="fill_parent"
@@ -36,13 +44,11 @@
             android:gravity="start"
             android:id="@+id/etComment"
             android:layout_weight="1"
-            android:hint="Post a comment"
-            android:elevation="2dp"/>
+            android:hint="Post a comment"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btComment"
-            android:elevation="2dp"
             android:text="@string/comment"/>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

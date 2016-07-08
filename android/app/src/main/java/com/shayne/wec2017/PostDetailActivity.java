@@ -2,19 +2,25 @@ package com.shayne.wec2017;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.parse.FindCallback;
+import com.parse.GetDataCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -141,6 +147,9 @@ public class PostDetailActivity extends AppCompatActivity {
         else {
             fillPost(post, user.get("username").toString());
         }
+        if ((Boolean)post.get("hasImage")) {
+            fillImage(post);
+        }
     }
 
     private void fillPost(Posts post, String author) {
@@ -150,6 +159,25 @@ public class PostDetailActivity extends AppCompatActivity {
         tvPostAuthorDate.setText(authorAndDate);
         assert tvPostContent != null;
         tvPostContent.setText(post.get("info").toString());
+    }
+
+    private void fillImage(Posts post) {
+        ParseFile imageFile = (ParseFile)post.get("image");
+        imageFile.getDataInBackground(new GetDataCallback() {
+            @Override
+            public void done(byte[] data, ParseException e) {
+                if (e == null) {
+                    Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
+                    ImageView imageView = (ImageView)findViewById(R.id.ivPostDetail);
+                    assert imageView != null;
+                    imageView.setImageBitmap(bmp);
+                    //imageView.setPadding(0,0,0,bmp.getHeight() + 15);
+                }
+                else {
+                    Log.e("PostDetailActivity", "Problem loading image from Parse");
+                }
+            }
+        });
     }
 
     private void packageComments(Posts post) throws JSONException {

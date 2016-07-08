@@ -1,8 +1,10 @@
 package com.shayne.wec2017;
 
+import android.graphics.Bitmap;
 import android.media.Image;
 
 import com.parse.ParseClassName;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
@@ -19,7 +21,7 @@ import java.util.Date;
     }
 
         public static String info;
-        public static Image image;
+        public static Bitmap imgBitmap;
         public static ParseUser user;
         public static int replies;
         public static String[] comments;
