@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+                android:padding="20dp">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -9,17 +10,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/post_content"/>
+            android:id="@+id/post_author"
+            android:textSize="16sp"
+            android:elevation="0dp"
+            android:layout_marginTop="0dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/post_date"/>
+            android:id="@+id/post_content"
+            android:elevation="0dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_date"
+            android:elevation="0dp"
+            android:layout_marginBottom="0dp"/>
     </LinearLayout>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxHeight="50dp"
         android:maxWidth="50dp"
+        android:elevation="4dp"
         android:id="@+id/post_img"
         android:layout_alignParentRight="true"
         android:scaleType="fitCenter"

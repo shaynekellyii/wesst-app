@@ -3,7 +3,172 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context="com.shayne.wec2017.ProfileFragment">
-    <LinearLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Header -->
+            <ImageButton
+                android:id="@+id/user_profile_photo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/profile_circular_border_imageview"
+                android:elevation="5dp"
+                android:padding="10dp"
+                android:scaleType="center"/>
+                <!--android:src="@drawable/profile"-->
+
+            <RelativeLayout
+                android:id="@+id/profile_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-60dp"
+                android:layout_below="@+id/user_profile_photo"
+
+                android:elevation="4dp"
+                android:paddingBottom="24dp"
+                android:background="?attr/colorPrimary">
+
+            <TextView
+                    android:id="@+id/user_profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="71dp"
+                    android:textColor="#fff"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/user_profile_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user_profile_school"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/user_profile_school"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user_profile_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="0dp"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <!-- User info -->
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_layout"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_profile_about"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_profile_year"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_below="@id/user_profile_about"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_profile_discipline"
+                    android:layout_below="@id/user_profile_year"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_profile_gender"
+                    android:layout_below="@id/user_profile_discipline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_profile_phone"
+                    android:layout_below="@id/user_profile_gender"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_profile_email"
+                    android:layout_below="@id/user_profile_phone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"/>
+
+                <TextView
+                    android:id="@+id/user_profile_birthday"
+                    android:layout_below="@id/user_profile_email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:padding="20dp"/>
+                <TextView
+                    android:id="@+id/user_profile_placeholder"
+                    android:layout_below="@id/user_profile_email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="#fff"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:text="Placeholder"
+                    android:padding="20dp"/>
+             </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</FrameLayout>
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -92,8 +257,4 @@
             android:layout_height="wrap_content"
             android:id="@+id/btEditProfile"
             android:text="@string/edit_profile"/>
-    </LinearLayout>
-
-
-
-</FrameLayout>
+    </LinearLayout>-->

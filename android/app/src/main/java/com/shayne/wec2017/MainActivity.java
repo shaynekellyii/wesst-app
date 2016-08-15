@@ -1,6 +1,7 @@
 package com.shayne.wec2017;
 
 import android.content.Intent;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.toolbar_title);
+        AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) toolbar.getLayoutParams();
+        params.setScrollFlags(0);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -111,6 +114,16 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_logout) {
             ParseUser.getCurrentUser().logOutInBackground();
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if (id == R.id.action_edit_profile) {
+            Intent intent = new Intent(MainActivity.this, EditProfileActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if (id == R.id.action_edit_photo) {
+            Intent intent = new Intent(MainActivity.this, EditUserPhotoActivity.class);
             startActivity(intent);
             return true;
         }

@@ -1,16 +1,24 @@
 package com.shayne.wec2017;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.parse.ParseUser;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by Shayne on 2016-06-21.
@@ -18,38 +26,42 @@ import com.parse.ParseUser;
 
 public class ProfileFragment extends Fragment {
 
-    TextView tvFullName;
+    TextView tvName;
     TextView tvSchool;
     TextView tvTitle;
-    TextView tvEmail;
+    TextView tvAbout;
+    TextView tvYear;
+    TextView tvDiscipline;
     TextView tvGender;
-    TextView tvInfo;
     TextView tvPhone;
-    TextView tvDate;
-
+    TextView tvEmail;
+    TextView tvBday;
+    ImageButton ibPhoto;
     Button btEditProfile;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        tvFullName = (TextView) rootView.findViewById(R.id.tvFullName);
-        tvSchool = (TextView) rootView.findViewById(R.id.tvSchool);
-        tvTitle = (TextView) rootView.findViewById(R.id.tvTitle);
-        tvEmail = (TextView) rootView.findViewById(R.id.tvEmail);
-        tvGender = (TextView) rootView.findViewById(R.id.tvGender);
-        tvInfo = (TextView) rootView.findViewById(R.id.tvInfo);
-        tvPhone = (TextView) rootView.findViewById(R.id.tvPhone);
-        tvDate = (TextView) rootView.findViewById(R.id.tvDate);
-        btEditProfile = (Button)rootView.findViewById(R.id.btEditProfile);
+        tvName = (TextView)rootView.findViewById(R.id.user_profile_name);
+        tvTitle = (TextView)rootView.findViewById(R.id.user_profile_title);
+        tvSchool = (TextView)rootView.findViewById(R.id.user_profile_school);
+        tvAbout = (TextView)rootView.findViewById(R.id.user_profile_about);
+        tvYear = (TextView)rootView.findViewById(R.id.user_profile_year);
+        tvDiscipline = (TextView)rootView.findViewById(R.id.user_profile_discipline);
+        tvGender = (TextView)rootView.findViewById(R.id.user_profile_gender);
+        tvPhone = (TextView)rootView.findViewById(R.id.user_profile_phone);
+        tvEmail = (TextView)rootView.findViewById(R.id.user_profile_email);
+        tvBday = (TextView)rootView.findViewById(R.id.user_profile_birthday);
+        ibPhoto = (ImageButton)rootView.findViewById(R.id.user_profile_photo);
 
-        btEditProfile.setOnClickListener(new View.OnClickListener() {
+        /*btEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), EditProfileActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         return rootView;
     }
@@ -68,64 +80,94 @@ public class ProfileFragment extends Fragment {
 
     private void populateProfile() {
         ParseUser user = ParseUser.getCurrentUser();
-        String notSpecified = getActivity().getString(R.string.not_specified);
         if (user != null) {
             if (user.get("fullname") != null) {
-                tvFullName.setText(user.get("fullname").toString());
+                tvName.setText(user.get("fullname").toString());
             }
             else {
-                tvFullName.setVisibility(View.GONE);
-                getView().findViewById(R.id.tvFullNameLabel).setVisibility(View.GONE);
+                tvName.setText(R.string.not_specified);
             }
+
             if (user.get("school") != null) {
                 tvSchool.setText(user.get("school").toString());
             }
             else {
-                tvSchool.setVisibility(View.GONE);
-                getView().findViewById(R.id.tvSchoolLabel).setVisibility(View.GONE);
+                tvSchool.setText(R.string.not_specified);
             }
+
             if (user.get("title") != null) {
                 tvTitle.setText(user.get("title").toString());
             }
             else {
-                tvTitle.setVisibility(View.GONE);
-                getView().findViewById(R.id.tvTitleLabel).setVisibility(View.GONE);
+                tvTitle.setText(R.string.not_specified);
             }
+
             if (user.getEmail() != null) {
-                tvEmail.setText(user.getEmail());
+                tvEmail.setText("Email\n" + user.getEmail());
             }
             else {
-                tvEmail.setVisibility(View.GONE);
-                getView().findViewById(R.id.tvEmailLabel).setVisibility(View.GONE);
+                tvTitle.setText("Email\n" + getResources().getString(R.string.not_specified));
             }
 
             if (user.get("gender") != null) {
-                tvGender.setText(user.get("gender").toString());
+                tvGender.setText("Gender\n" + user.get("gender").toString());
             }
             else {
-                tvGender.setVisibility(View.GONE);
-                getView().findViewById(R.id.tvGenderLabel).setVisibility(View.GONE);
+                tvGender.setText("Gender\n" + getResources().getString(R.string.not_specified));
             }
+
             if (user.get("info") != null) {
-                tvInfo.setText(user.get("info").toString());
+                tvAbout.setText("About\n" + user.get("info").toString());
             }
             else {
-                tvInfo.setVisibility(View.GONE);
-                getView().findViewById(R.id.tvInfoLabel).setVisibility(View.GONE);
+                tvAbout.setText("About\n" + getResources().getString(R.string.not_specified));
             }
+
             if (user.get("phone") != null) {
-                tvPhone.setText(user.get("phone").toString());
+                tvPhone.setText("Phone number\n" + user.get("phone").toString());
             }
             else {
-                tvPhone.setVisibility(View.GONE);
-                getView().findViewById(R.id.tvPhoneLabel).setVisibility(View.GONE);
+                tvPhone.setText("Phone number\n" + getResources().getString(R.string.not_specified));
             }
+
+            if (user.get("option") != null) {
+                tvDiscipline.setText("Discipline\n" + user.get("option").toString());
+            }
+            else {
+                tvDiscipline.setText("Discipline\n" + getResources().getString(R.string.not_specified));
+            }
+
+            if (user.get("year") != null) {
+                tvYear.setText("Year\n" + user.get("year").toString());
+            }
+            else {
+                tvYear.setText("Year\n" + getResources().getString(R.string.not_specified));
+            }
+
             if (user.get("birthday") != null) {
-                tvDate.setText(user.get("birthday").toString());
+                tvBday.setText("Birthday\n" + user.get("birthday").toString());
             }
             else {
-                tvDate.setVisibility(View.GONE);
-                getView().findViewById(R.id.tvDateLabel).setVisibility(View.GONE);
+                tvBday.setText("Birthday\n" + getResources().getString(R.string.not_specified));
+            }
+
+            if (user.get("picture") != null) {
+                Picasso.with(getContext()).load(user.getParseFile("picture").getUrl()).into(ibPhoto, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        Bitmap bitmap = ((BitmapDrawable) ibPhoto.getDrawable()).getBitmap();
+                        bitmap = Bitmap.createScaledBitmap(bitmap, 400, 400, false);
+
+                        RoundedBitmapDrawable roundDrawable = RoundedBitmapDrawableFactory.create(getResources(), bitmap);
+                        roundDrawable.setCircular(true);
+
+                        ibPhoto.setImageDrawable(roundDrawable);
+                    }
+                    @Override
+                    public void onError() {
+                        // yikes...
+                    }
+                });
             }
         }
     }

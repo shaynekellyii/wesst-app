@@ -1,5 +1,7 @@
 package com.shayne.wec2017;
 
+import com.parse.ParseUser;
+
 import java.util.Date;
 
 /**

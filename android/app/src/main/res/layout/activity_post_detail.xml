@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:id="@+id/post_detail_activity"
+    android:clipChildren="false"
     tools:context="com.shayne.wec2017.NewPostActivity">
 
     <android.support.design.widget.AppBarLayout

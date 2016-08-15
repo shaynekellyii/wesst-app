@@ -1,11 +1,15 @@
 package com.shayne.wec2017;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.parse.ParseException;
+import com.parse.ParseUser;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -29,6 +33,7 @@ public class PostDetailAdapter extends ArrayAdapter<Comment> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
+        ViewHolder holder = new ViewHolder();
 
         if (v == null) {
             LayoutInflater layoutInflater;
@@ -36,20 +41,30 @@ public class PostDetailAdapter extends ArrayAdapter<Comment> {
             v = layoutInflater.inflate(R.layout.comment_list_item, null);
         }
 
+        holder.tvContent = (TextView) v.findViewById(R.id.tvCommentContent);
+        holder.tvDate = (TextView) v.findViewById(R.id.tvCommentDate);
+        holder.tvAuthor = (TextView) v.findViewById(R.id.tvCommentAuthor);
+
         Comment comment = getItem(position);
 
         if (comment != null) {
-            TextView tvContent = (TextView) v.findViewById(R.id.tvCommentContent);
-            TextView tvDate = (TextView) v.findViewById(R.id.tvCommentDate);
-
-            if (tvContent != null) {
-                tvContent.setText(comment.getContent());
+            if (holder.tvContent != null) {
+                holder.tvContent.setText(comment.getContent());
             }
-            if (tvDate != null) {
-                tvDate.setText(df.format(comment.getDate()));
+            if (holder.tvDate != null) {
+                holder.tvDate.setText(df.format(comment.getDate()));
+            }
+            if (holder.tvAuthor != null) {
+                holder.tvAuthor.setText(comment.getAuthor());
             }
         }
 
         return v;
+    }
+
+    static class ViewHolder {
+        TextView tvContent;
+        TextView tvDate;
+        TextView tvAuthor;
     }
 }

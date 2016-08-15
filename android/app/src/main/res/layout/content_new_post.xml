@@ -11,7 +11,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.shayne.wec2017.NewPostActivity"
-    tools:showIn="@layout/activity_new_post">
+    tools:showIn="@layout/activity_new_post"
+    android:id="@+id/new_post_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,6 +29,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/btSendPost"
             android:text="@string/post"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btAddImg"
+            android:text="Add image"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivImgPreview"/>
     </LinearLayout>
 
 </RelativeLayout>

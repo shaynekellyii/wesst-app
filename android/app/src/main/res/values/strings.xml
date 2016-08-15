@@ -12,13 +12,13 @@
     <string name="signup">Sign up</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="msg_fragment">Messages</string>
+    <string name="msg_fragment">Messages coming soon</string>
     <string name="comp_fragment">Competition info</string>
     <string name="stream_fragment">Stream</string>
     <string name="action_logout">Log out</string>
     <string name="post">Post</string>
     <string name="toolbar_title">WESST</string>
-    <string name="not_specified">Unknown</string>
+    <string name="not_specified">Not specified</string>
 
     <string name="fullname_label">Full name:</string>
     <string name="school_label">School:</string>
@@ -45,11 +45,18 @@
         <item>U of R</item>
         <item>U of S</item>
     </string-array>
+    <string-array name="year_array">
+        <item>1st</item>
+        <item>2nd</item>
+        <item>3rd</item>
+        <item>4th</item>
+        <item>nth</item>
+    </string-array>
 
     <string name="edit_profile">Edit profile</string>
     <string name="save_profile">Save</string>
 
     <string name="title_activity_new_post">New post</string>
     <string name="title_activity_edit_profile">Edit profile</string>
-
+<string name="title_activity_edit_user_photo">Edit user image</string>
 </resources>
